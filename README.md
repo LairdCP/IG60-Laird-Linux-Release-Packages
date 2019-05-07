@@ -1,4 +1,4 @@
-# SOM60-Release-Packages
+# IG60-Laird-Linux-Release-Packages
 IG60 Development Kit and Source Releases.  For source release instructions and a getting started guide, jump to the introduction. For binary development kit images and a prebuilt SDK, see the releases page linked below. Source releases require binaries from the development kit binary releases.  For these binaries and the development kit binary images, also see the link below:
 
 <https://github.com/LairdCP/SOM60-Release-Packages/releases>
