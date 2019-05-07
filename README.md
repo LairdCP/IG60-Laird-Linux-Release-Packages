@@ -5,55 +5,10 @@ IG60 Development Kit and Source Releases.  For source release instructions and a
 
 # Introduction
 ## Purpose
-The reference guide is intended to provide an embedded developer with the information needed to start evaluating and integrating the 60 Series SOM for their connectivity and embedded Linux processing needs.  The guide is designed to walk the developer integrating the 60 Series SOM through the same process Laird developers use to develop our own boxed products. This allows multiple levels of Laird's customer support team to assist with customer integrations.
+The reference guide is intended to provide an embedded developer with the information needed to start evaluating and integrating the IG60 Laird Linux gateway for their connectivity and embedded Linux processing needs.  The guide is designed to walk the developer integrating the IG60 Laird Linux gateway through the same process Laird developers use to develop our own boxed products. This allows multiple levels of Laird's customer support team to assist with customer integrations.
 ## Product Overview
-Laird’s 60 Series SOM, based on the Microchip SAMA5D36 processor, brings all of Laird’s industry competence and capabilities into one solution. The SOM provides superior enterprise-class Wi-Fi connectivity with full support for 2x2 MU-MIMO 802.11ac WLAN, plus Bluetooth 4.2 dual-mode. This solution is equipped with a power efficient Cortex A5 applications processor, wireless and wired connectivity, enterprise-grade security, LCD support, and comprehensive Linux board support package (BSP). The 60 SOM is the ideal system on module for devices that require superior connectivity. Complete with the Sterling 60 series module and Summit Software Stack, the SOM provides superior wireless connectivity in harsh RF environments. For wired connectivity, it supports dual-Ethernet and CAN bus. The 30mm x 30mm form factor and variety of interfaces allow the 60 Series SOM to be used as a wireless bridge, main processing unit, or IoT gateway.
+Laird’s IG60 Laird Linux gateway, based on the Microchip SAMA5D36 processor, brings all of Laird’s industry competence and capabilities into one solution. The gateway provides superior enterprise-class Wi-Fi connectivity with full support for 2x2 MU-MIMO 802.11ac WLAN, plus Bluetooth 4.2 dual-mode. This solution is equipped with a power efficient Cortex A5 applications processor, wireless and wired connectivity, enterprise-grade security, LCD support, and comprehensive Linux board support package (BSP). The IG60 Laird Linux gateway is the ideal system on module for devices that require superior connectivity. Complete with the Sterling 60 series module and Summit Software Stack, the SOM provides superior wireless connectivity in harsh RF environments. For wired connectivity, it supports dual-Ethernet and CAN bus. The 30mm x 30mm form factor and variety of interfaces allow the IG60 Laird Linux gateway to be used as a wireless bridge, main processing unit, or IoT gateway.
 # Hardware Information
-## 60 Series SOM
-For full hardware specifications, please see [Datasheet - 60 Series SOM](https://connectivity-staging.s3.us-east-2.amazonaws.com/2019-02/CS-DS-60-SOM%20v1_2.pdf) on our website.
-## 60 Series SOM Development Kit
-The DVK-SU60-SOMC development kit is intended for evaluating the features and software of the 60 Series SOM (SU60-SOMC) module.  The 60 Series SOM module is soldered to the development board and all its relevant hardware interfaces have been brought out onto the DVK-SU60-SOMC. An optional DVK-SU60-SOMC-LCD board is available to enabled evaluation of the graphics and touchscreen capabilties of the 60 Series SOM module.
-### Kit Contents
-The development kit contains the following:
-* DVK-SU60-SOMC development board
-* External dipole antenna (2) – LSR 001-0009
-* Stand-offs (4)
-* Nuts (4)
-* Power supply – 12V 2A (1)
-* Female SMA to female U.FL cable – 110 mm (2)
-* USB A to Micro USB – 1200 mm (1)
-* Product insert card (1)
-
-### Specifications
-![SOM60 DVK Spec](https://github.com/LairdCP/content_imgs/blob/master/som60/dvk_som60_kit_spec.jpg?raw=true)
-### Block Diagram
-![SOM60 Block Diagram](https://github.com/LairdCP/content_imgs/blob/master/som60/dvk_som60_block_diagram.jpg?raw=true)
-### Board Overview
-![SOM60 Labeled](https://github.com/LairdCP/content_imgs/blob/master/som60/dvk_som60_labeled.jpg?raw=true)
-### Board Components
-![SOM60 Interface Con](https://github.com/LairdCP/content_imgs/blob/master/som60/dvk_som60_board_interface_con.jpg?raw=true)
-### Pin Header Definition
-![SOM60 Pin Headers](https://github.com/LairdCP/content_imgs/blob/master/som60/dvk_som60_pin_headers.jpg?raw=true)
-# Quick Start
-## Insert SD Card
-The DVK-SU60-SOMC comes with a preprogrammed SD card inserted into CON55 for quick evaluation of features like setting up WiFi profiles via [NetworkManager](#networkmanager). After an initial boot and once familar with having a development kit running, it is recommended you update to the latest prebuilt image available on our releases page. For more information on updating to a new SD card image or creating your own from source see [the getting started with a SD card section](#getting-started-with-a-developer-s-sd-card-image-and-a-sdk).
-
-## Install Antennas
-Unpack the two external dipole antennas and two SMA to U.FL cables. Screw each external dipole antennas into a SMA to U.FL cable. Plug each female U.FL connector on the SMA to U.FL cables into the male U.FL plugs on the SU60-SOMC (pictured below).
-
-![U.FL Cable Plugged into SU60-SOM](https://github.com/LairdCP/content_imgs/blob/master/som60/dvk_som60_ufl.jpg?raw=true)
-## Powering Up the Board
-To power up the board, follow these steps:
-1. Unpack the board. Be careful to avoid electrostatic discharge.
-2. Ensure VDDIOP0 and VDDIOP1 is configured to 3.3V by adjusting the slide switch SW3 and jumper SW4.
-3. Unpack the power supply, select the right power plug adapter corresponding to that of your country, and plug it into your AC outlet.
-4. Connect the power supply's DC barrel plug to the DC jack (CON8) on the DVK-SU60-SOMC.
-
-## Plug In Debug Console Cable
-Connect the USB-to-Micro USB cable from your computer to the Debug UART (USB1) on the DVK-SU60-SOMC. A picture of a ready to evaluate development kit is below:
-
-![DVK-SU60-SOMC Plugged In](https://github.com/LairdCP/content_imgs/blob/master/som60/dvk_som60_plugged_in.jpg?raw=true)
-
 ## Using the Debug Console
 Connect the USB-to-Micro USB cable from your computer to the Debug UART (USB1) on the DVK-SU60-SOMC. During development and evaluation, a serial console program is required.  Laird recommends the use of minicom on Linux or PuTTY on Windows. If using the recommended Ubuntu operating system for evaluation or development, you can install minicom as follows:
 
