@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="origin" fetch="ssh://git@github.com/LairdCP" />
+
+  <default remote="origin" revision="refs/tags/LRD-REL-7.0.0.65" />
+
+  <project path="wb"
+           name="wb.git" />
+
+  <project path="wb/buildroot"
+           name="wb-buildroot.git" />
+
+  <project path="wb/buildroot/package/lrd/externals/kernel"
+           name="wb-kernel.git" />
+
+  <project path="wb/buildroot/package/lrd/externals/kernel/drivers/net/wireless/laird/lrdmwl"
+           name="lrdmwl.git" />
+
+  <project path="wb/buildroot/package/lrd/externals/u-boot-som60"
+           name="u-boot-som.git" />
+
+  <project path="wb/buildroot/package/lrd/externals/lrd-network-manager"
+           name="lrd_network_manager.git" />
+
+  <project path="wb/buildroot/package/lrd/externals/weblcm-python"
+           name="weblcm-python.git" />
+</manifest>
