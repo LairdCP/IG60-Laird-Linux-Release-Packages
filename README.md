@@ -5,7 +5,7 @@ IG60 Development Kit and Source Releases.  For source release instructions and a
 
 # Introduction
 ## Purpose
-The reference guide is intended to provide an embedded developer with the information needed to start evaluating and integrating the IG60 Laird Linux gateway for their IoT connectivity and processing needs.  The guide is designed to walk the developer integrating the IG60 Laird Linux gateway through the same process Laird developers use to develop our own boxed products. This allows multiple levels of Laird's customer support team to assist with customer integrations.
+The reference guide is intended to provide an embedded developer with the information needed to start evaluating and integrating the Sentrius™ IG60 gateway using Laird Linux for their IoT connectivity and processing needs.  The guide is designed to walk the developer integrating the IG60 Laird Linux gateway through the same process Laird developers use to develop our own boxed products. This allows multiple levels of Laird's customer support team to assist with customer integrations.
 ## Product Overview
 The Sentrius™ IG60 using Laird Linux has a small footprint for easy installation and a rugged, industry spec design that enables it to withstand wide temperature ranges, humidity, shock, and vibration. Certified for industry environment, the IG60 is ideal for industry deployment.
 
@@ -14,26 +14,22 @@ The IG60 can use several wired and wireless interfaces, collecting data and usin
 The IG60 comes standard with IEEE 802.11ac 2x2, Bluetooth 4.2, Ethernet, USB, SD and serial interfaces.
 
 Example customer use cases that can be developed using the IG60 running Laird Linux:
-
 * Remotely monitor and control your infrastructure and surveillance equipment on pipelines, meters, pumps and valves in any energy, utility or industrial application.
 * Instantly connect your equipment at remote locations or temporary sites.
 * Providing reliable internet connectivity to remote workers.
 * Connecting your machines to IoT platform (Such as Microsoft Azure, Amazon AWS, and PTC ThingWorx, etc.) for continuous monitoring and visualization.
 # Hardware Information
-Wired Interfaces
+## Wired Interfaces
+### Serial Ports
+The serial port supports RS232, RS422 and RS485 modes via a D-Sub9 connector. The IG60 can then take that information and re-encode it in a format such as MQTT, preparing it for an IoT platform like AWS.
+* Complies with the EIA RS-232, RS-422, and RS-485 specification.
+* Supports up to 115.2 kbps baud rate.
+* Software selectable RS-232/422/485 communication.
+* Output driver levels swing from -7 VDC to +7 VDC with normal loading.
+* Input voltage ranges from -25 VDC to +25 VDC.
 
-Serial Ports
-
-The serial port supports RS232, RS422 and RS485 modes via a D-Sub9 connector.
-
-The IG60 can then take that information and re-encode it in a format such as MQTT, preparing it for an IoT platform like AWS.
-
-Complies with the EIA RS-232, RS-422, and RS-485 specification.
-Supports up to 115.2 kbps baud rate.
-Software selectable RS-232/422/485 communication.
-Output driver levels swing from -7 VDC to +7 VDC with normal loading.
-Input voltage ranges from -25 VDC to +25 VDC.
 The following table provides the pin definition of the D-Sub9 connector for various operation modes.
+![Serial Pin Out](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_power_port_pin_out.png?raw=true)
 The following table summarizes the serial pins in their various specifications and duplex settings.
 Ethernet
 
