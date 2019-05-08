@@ -19,7 +19,16 @@ Example customer use cases that can be developed using the IG60 running Laird Li
 * Providing reliable internet connectivity to remote workers.
 * Connecting your machines to IoT platform (Such as Microsoft Azure, Amazon AWS, and PTC ThingWorx, etc.) for continuous monitoring and visualization.
 # Hardware Information
+## Gateway Interfaces
+![Gateway Connectors](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_connectors.png?raw=true)
+## Power Supply
+The IG60 supports a voltage range between 9 V and 36V. The following figure shows the power connector on the IG60.The IG60 comes with a 12V/2.5A AC power adapter. 
+![Power Port](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_power_port.png?raw=true)
+![Power Port Pin Out](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_power_port_pin_out.png?raw=true)
+An optional DC power cable with three meter length is available for the IG60, as shown below.
+![Power Cord](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_power_cord.png?raw=true)
 ## Wired Interfaces
+
 ### Serial Ports
 The serial port supports RS232, RS422 and RS485 modes via a D-Sub9 connector. The IG60 can then take that information and re-encode it in a format such as MQTT, preparing it for an IoT platform like AWS.
 * Complies with the EIA RS-232, RS-422, and RS-485 specification.
@@ -27,63 +36,45 @@ The serial port supports RS232, RS422 and RS485 modes via a D-Sub9 connector. Th
 * Software selectable RS-232/422/485 communication.
 * Output driver levels swing from -7 VDC to +7 VDC with normal loading.
 * Input voltage ranges from -25 VDC to +25 VDC.
+* The following table provides the pin definition of the D-Sub9 connector for various operation modes.
 
-The following table provides the pin definition of the D-Sub9 connector for various operation modes.
-![Serial Pin Out](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_power_port_pin_out.png?raw=true)
 The following table summarizes the serial pins in their various specifications and duplex settings.
-Ethernet
-
+![Serial Port](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_serial_port.png?raw=true)
+![Serial Pin Out](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_power_port_pin_out.png?raw=true)
+### Ethernet
 There are two ethernet ports on the IG60.
-
-LAN1 for 10/100 Mbit/s
-LAN2 for 10/100/1000 Mbit/s
-For to indication Ethernet status, there are two embedded LEDs are associated with each port. Table 7 provides a description of the two LEDs.
-USB 
-
+* LAN1 for 10/100 Mbit/s
+* LAN2 for 10/100/1000 Mbit/s
+For to indication Ethernet status, there are two embedded LEDs are associated with each port.
+### USB 
 The USB-A connector on the IG60 supports connection to USB devices. The USB device port supports the USB 2.0 standard, at high speed, full speed, and low speed data rates.
-
-Antenna Ports
-
+### Antenna Ports
 There are two SMA antenna ports on the IG60, for WLAN1 and WLAN2. These two connectors are fitted with the two included dipole antennas
 
-Wireless Interfaces
-
-Wi-Fi
-
+## Wireless Interfaces
+### Wi-Fi
 The gateway's 802.11ac Wi-Fi features 2x2 MU-MIMO support, powered by the Marvell 88W8997 chipset. Additional spatial streams provide higher wireless throughput, and a dedicated cryptographic chip provides FIPS 140-2 encryption for sensitive data.
 
 The Wi-Fi connection is supported by both the WLAN1 and WLAN2 antennas.
-
-Bluetooth
-
+### Bluetooth
 With Bluetooth 5, the gateway provides both Classic Bluetooth and Bluetooth Low Energy connection. Bluetooth Low Energy is ideal for collecting intermittent sensor data from a large number of sources, while Classic Bluetooth can accept virtual serial port or other higher bandwidth data streams.
 
 The Bluetooth connection is supported by the WLAN2 antenna.
-Data Storage
-
-Onboard Flash Memory
-
-The IG60 features 512 MB of internal NAND Flash memory available for your applications.
-
-This internal memory is encompassed in the user space provided for the Greengrass core. This storage space is not meant to be directly manipulated by the user, but rather applications are deployed by AWS and executed from this space.
-
-MicroSD Slot
-
-The MicroSD slot (SDHC, SD Card 2.0) provides a large amount of removable storage. This is especially useful for instances where large amounts of data need to be logged or preserved. For example, for instances where wireless signal is temporarily lost, data can be backed up via a micro SD slot and sent to its destination when connection is re-established. The MicroSD slot provides potentially hundreds of gigabytes of data storage for your applications.
-Power Supply
-
-The IG60 supports a voltage range between 9 V and 36V. The following figure shows the power connector on the IG60.The IG60 comes with a 12V/2.5A AC power adapter. An optional DC power cable with three meter length is available for the IG60, as shown below.
-
+### Data Storage
+#### Onboard Flash Memory
+The IG60 features 512 MB of internal NAND Flash memory available for your customized image of Laird Linux with your applications.
+#### MicroSD Slot
+The MicroSD slot (SDHC, SD Card 2.0) provides a large amount of removable storage. For initial bring up, the SD card development kit images are the first use of the MicroSD slot. In a production environment, this slot is especially useful for instances where large amounts of data need to be logged or preserved. For example, for instances where wireless signal is temporarily lost, data can be backed up via a micro SD slot and sent to its destination when connection is re-established. The MicroSD slot provides potentially hundreds of gigabytes of data storage for your applications.
 ## Using the Debug Console
-Connect the USB-to-Micro USB cable from your computer to the Debug UART (USB1) on the DVK-SU60-SOMC. During development and evaluation, a serial console program is required.  Laird recommends the use of minicom on Linux or PuTTY on Windows. If using the recommended Ubuntu operating system for evaluation or development, you can install minicom as follows:
+For the SD card images, the Serial Port is a debug console. Connect a serial cable cable from your computer to the Serial Port on the IG60. During development and evaluation, a serial console program is required.  Laird recommends the use of minicom on Linux or PuTTY on Windows. If using the recommended Ubuntu operating system for evaluation or development, you can install minicom as follows:
 
 * `$ sudo apt install minicom`
 
-Once the Debug UART (USB1) on the DVK-SU60-SOMC is connected to your Ubuntu computer, you should have a new /dev/ttyUSB device that has enumerated. Assuming this enumeration is /dev/ttyUSB0, the console of the SU60-SOMC can be accessed with minicom via the following command:
+Once the Serial Port on the IG60 is connected to your Ubuntu computer, you should have a new /dev/ttyUSB device that has enumerated. Assuming this enumeration is /dev/ttyUSB0, the console of the IG60 can be accessed with minicom via the following command:
 
 * `$ sudo TERM=linux minicom -o -D /dev/ttyUSB0`
 
-If you power cycle the SOM60 via the NRST (SW1) button, you should see a boot-up sequence similar to below. The example boot output has been heavily truncated to fit in this guide.
+If you power cycle the IG60, you should see a boot-up sequence similar to below. The example boot output has been heavily truncated to fit in this guide.
 
 ```
 RomBOOT
@@ -190,10 +181,10 @@ Laird Linux board support packages are availabe on GitHub. The most seamless wor
 
 ## Laird Linux
 ### Overview
-Laird Linux is Laird's board support package specifically tailored for Laird's SOMs and customer's connectivity driven use cases. Laird regularly updates Laird Linux by merging in the upstream Linux kernel and Buildroot. We merge in major long-term support kernel releases which allow our SOMs to utilize the latest in drivers and kernel space functionality, performance enhancements, security, and bug fixes.  Also, we merge in major long-term support Buildroot releases which provide for the latest in over 2200 user space applications and libraries. Laird Linux takes this solid upstream heritage and integrates our custom platform enhancements for connectivity, security, and power consumption.
+Laird Linux is Laird's board support package specifically tailored for Laird's gateways and customer's connectivity driven use cases. Laird regularly updates Laird Linux by merging in the upstream Linux kernel and Buildroot. We merge in major long-term support kernel releases which allow our gateways to utilize the latest in drivers and kernel space functionality, performance enhancements, security, and bug fixes.  Also, we merge in major long-term support Buildroot releases which provide for the latest in over 2200 user space applications and libraries. Laird Linux takes this solid upstream heritage and integrates our custom platform enhancements for connectivity, security, and power consumption.
 
 ### Buildroot
-The core piece of Laird Linux is [Buildroot](https://buildroot.org/). Buildroot is a from source build system designed to allow the customer to create a customized Linux image for a target embedded computing module. Buildroot is capable of configuring and building the bootloader, kernel, and rootfs for Laird's SOMs. Buildroot's core build system technologies are the well-known and easy to understand [make](https://en.wikipedia.org/wiki/Make_(software)) build tool and [kconfig](https://www.kernel.org/doc/Documentation/kbuild/kconfig-language.txt) configuration tool. This enables easy build customization through the user interface tools [menuconfig](https://en.wikipedia.org/wiki/Menuconfig) or xconfig and Buildroot make commands. The [Linux kernel](https://www.kernel.org/), [U-Boot bootloader](http://www.denx.de/wiki/U-Boot/WebHome), and [Busybox core userspace ulilities toolkit](https://en.wikipedia.org/wiki/BusyBox) all use make, Kconfig, and menuconfig. Build and configuration concepts found in one translate nicely to another. Buildroot has easy to read and extensive documentation available at (https://buildroot.org/docs.html) in pdf, html, and ascii form.  If time permits, Laird highly recommends following the Training section of the documentation landing page.
+The core piece of Laird Linux is [Buildroot](https://buildroot.org/). Buildroot is a from source build system designed to allow the customer to create a customized Linux image for a target embedded computing module. Buildroot is capable of configuring and building the bootloader, kernel, and rootfs for Laird's gateways. Buildroot's core build system technologies are the well-known and easy to understand [make](https://en.wikipedia.org/wiki/Make_(software)) build tool and [kconfig](https://www.kernel.org/doc/Documentation/kbuild/kconfig-language.txt) configuration tool. This enables easy build customization through the user interface tools [menuconfig](https://en.wikipedia.org/wiki/Menuconfig) or xconfig and Buildroot make commands. The [Linux kernel](https://www.kernel.org/), [U-Boot bootloader](http://www.denx.de/wiki/U-Boot/WebHome), and [Busybox core userspace ulilities toolkit](https://en.wikipedia.org/wiki/BusyBox) all use make, Kconfig, and menuconfig. Build and configuration concepts found in one translate nicely to another. Buildroot has easy to read and extensive documentation available at (https://buildroot.org/docs.html) in pdf, html, and ascii form.  If time permits, Laird highly recommends following the Training section of the documentation landing page.
 
 Laird's Buildroot is a fork of the upstream [Buildroot stable](https://git.busybox.net/buildroot/). Starting with and merging upstream allows Laird to know the authenticity of Buildroot's source code and better verify the security of our fork. Laird targets [long-term support releases (LTS)](https://buildroot.org/download.html) for merging into our Buildroot fork.
 
@@ -201,7 +192,7 @@ Laird's Buildroot is a fork of the upstream [Buildroot stable](https://git.busyb
 Laird's kernel is a fork the upstream [Linux stable kernel](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/). Starting with and merging upstream allows Laird to know the authenticity of the kernel's source code and better verify the security of our fork. Laird targets [long-term support releases (LTS)](https://www.kernel.org/category/releases.html) for merging into our kernel fork.
 
 ### Toolchain
-Laird preselects prebuilt toolchains for each release of Laird Linux for our SOMs. The advantage of using a preselected and prebuilt toolchain is the high level of QA verification on common components between stock Laird development images and customer images. We are currently ultilizing prebuilt toolchains from [Bootlin’s toolchain program](https://toolchains.bootlin.com).  Bootlin, who is major contributor to Buildroot, provides a variety of prebuilt toolchains created from Buildroot's toolchain building capabilties. Laird selects toolchains that have been marked stable by the Buildroot community and use proven components. Beyond the toolchains themselves, Bootlin also stores the following artifacts for reference from their Buildroot based toolchain generation process: README of all essential information, defconfig fragment to generate toolchain, build log, software bill-of-material (SBOM), test system image, and test system defconfig. Laird configures each Laird Linux release to automatically download and use the correct toolchain.
+Laird preselects prebuilt toolchains for each release of Laird Linux for our gateways. The advantage of using a preselected and prebuilt toolchain is the high level of QA verification on common components between stock Laird development images and customer images. We are currently ultilizing prebuilt toolchains from [Bootlin’s toolchain program](https://toolchains.bootlin.com).  Bootlin, who is major contributor to Buildroot, provides a variety of prebuilt toolchains created from Buildroot's toolchain building capabilties. Laird selects toolchains that have been marked stable by the Buildroot community and use proven components. Beyond the toolchains themselves, Bootlin also stores the following artifacts for reference from their Buildroot based toolchain generation process: README of all essential information, defconfig fragment to generate toolchain, build log, software bill-of-material (SBOM), test system image, and test system defconfig. Laird configures each Laird Linux release to automatically download and use the correct toolchain.
 
 ### Versioning
 Laird Linux releases follow an A.B.C.D versioning scheme. Rolling the A.x.x.x digit indicates we have merged a new major LTS kernel version and created a new git branch. Once we merge the new LTS kernel, B.C.D go to A.0.0.0. For example the 6.0.0.x releases are based on the 4.14.x LTS kernel and the 7.0.0.x releases are based on the 4.19.x LTS kernel. All new A.0.0.x releases also merge the latest LTS Buildroot. For example the 6.0.0.x releases are based on the 2018.02.x LTS Buildroot and the 7.0.0.x releases are based on the 2019.02.x LTS Buildroot. Laird rolls the x.B.x.x digit to indicate that a new major LTS Buildroot has been merged on a specific A.x.x.x LTS kernel after its initial Buildroot release. The x.x.C.x digit is reserved for future use. The x.x.x.D digit indicates the build number for that A.B.C.x release.
@@ -220,28 +211,28 @@ This section will walk a developer through following:
 * [Creating a custom SDK](#create-a-custom-sdk)
 
 ### Downloading a developer's SD card image
-Laird Linux releases include a prebuilt SD card image as a starting point for evaluating and integrating a Laird Linux release on a Laird SOM. For the 60 SOM, these prebuilt images are found on at [60 SOM release page](https://github.com/LairdCP/SOM60-Release-Packages/releases). These releases are named som60sd-laird-A.B.C.D.tar.bz2. These prebuilt SD card images are good for quickly testing a SOM running the latest software.
+Laird Linux releases include a prebuilt SD card image as a starting point for evaluating and integrating a Laird Linux release on a Laird gateway. For the IG60, these prebuilt images are found on at [IG60 Laird Linux release page](https://github.com/LairdCP/IG60-Laird-Linux-Release-Packages/releases). These releases are named ig60sd-laird-A.B.C.D.tar.bz2. These prebuilt SD card images are good for quickly testing a IG running the latest software.
 
 ### Flashing a developer's SD card image
 Once the image is downloaded. Extract the image:
 ```
-~/Downloads/som60sd$ tar -xvf som60sd-laird-7.0.0.38.tar.bz2 
-som60sd-laird-7.0.0.38/
-som60sd-laird-7.0.0.38/som60sd-target-sbom-20190222
-som60sd-laird-7.0.0.38/som60sd-host-sbom-20190222
-som60sd-laird-7.0.0.38/u-boot-spl.bin
-som60sd-laird-7.0.0.38/u-boot.itb
-som60sd-laird-7.0.0.38/rootfs.tar
-som60sd-laird-7.0.0.38/som60sd-sdk.tar.bz2
-som60sd-laird-7.0.0.38/legal-info-20190222.tar.bz2
-som60sd-laird-7.0.0.38/kernel.itb
-som60sd-laird-7.0.0.38/mksdcard.sh
-som60sd-laird-7.0.0.38/mksdimg.sh
+~/Downloads/ig60sd$ tar -xvf ig60sd-laird-7.0.0.38.tar.bz2 
+ig60sd-laird-7.0.0.38/
+ig60sd-laird-7.0.0.38/ig60sd-target-sbom-20190222
+ig60sd-laird-7.0.0.38/ig60sd-host-sbom-20190222
+ig60sd-laird-7.0.0.38/u-boot-spl.bin
+ig60sd-laird-7.0.0.38/u-boot.itb
+ig60sd-laird-7.0.0.38/rootfs.tar
+ig60sd-laird-7.0.0.38/ig60sd-sdk.tar.bz2
+ig60sd-laird-7.0.0.38/legal-info-20190222.tar.bz2
+ig60sd-laird-7.0.0.38/kernel.itb
+ig60sd-laird-7.0.0.38/mksdcard.sh
+ig60sd-laird-7.0.0.38/mksdimg.sh
 
 ```
 To flash the image to an SD card use the mksdcard.sh script. The mksdcard.sh script takes the target device as an argument and will ask if you'd like to proceed with removing all data on your SD card and flashing a new image.  This is shown below:
 ```
-~/Downloads/som60sd-laird-7.0.0.34$ sudo ./mksdcard.sh /dev/sdc
+~/Downloads/ig60sd-laird-7.0.0.34$ sudo ./mksdcard.sh /dev/sdc
 [sudo] password for user: 
 *************************************************************************
 WARNING: All data on /dev/sdc now will be destroyed! Continue? [y/n]
@@ -275,11 +266,11 @@ Syncing disks.
 [Copying files...]
 [Done]
 ```
-You can now insert your SD card into the SOM hardware development kit and press the reset button to boot into the new SD card image.
+You can now insert your SD card into the IG hardware development kit and press the reset button to boot into the new SD card image.
 
 ### Using a prebuilt SDK
 
-Laird Linux releases include a prebuilt SDK to start doing application development for a Laird SOM. For the 60 SOM, this prebuilt SDK is called som60sd-sdk-A.B.C.D.tar.bz2 and can be found with each release at the [60 SOM release page](https://github.com/LairdCP/SOM60-Release-Packages/releases). The prebuilt SDK includes the toolchain and all development files of the software packages used to generate the prebuilt SD card image from that release. The SDK can be set up for use with an IDE to allow application developers to not need a full BSP on their system. To use the SDK, extract the SDK tarball then run the script relocate-sdk.sh (located at the top directory of the SDK), to make sure all paths are updated with the new location. For more information on using SDKs generated from Laird's Buildroot fork, see the [Buildroot manual's section on the SDK](https://buildroot.org/downloads/manual/manual.html#_advanced_usage).
+Laird Linux releases include a prebuilt SDK to start doing application development for a Laird IG. For the IG60, this prebuilt SDK is called ig60sd-sdk-A.B.C.D.tar.bz2 and can be found with each release at the [IG60 Laird Linux release page](https://github.com/LairdCP/IG60-Laird-Linux-Release-Packages/releases). The prebuilt SDK includes the toolchain and all development files of the software packages used to generate the prebuilt SD card image from that release. The SDK can be set up for use with an IDE to allow application developers to not need a full BSP on their system. To use the SDK, extract the SDK tarball then run the script relocate-sdk.sh (located at the top directory of the SDK), to make sure all paths are updated with the new location. For more information on using SDKs generated from Laird's Buildroot fork, see the [Buildroot manual's section on the SDK](https://buildroot.org/downloads/manual/manual.html#_advanced_usage).
 
 ### Downloading the board support package source code
 
@@ -287,9 +278,9 @@ First step, pick which release you want. Odds are you want the most recent of yo
 
 Next, use repo to initalize and fetch your release. This is a two-step process: first you tell repo which manifest to use and then you tell it to fetch everything.
 
-    mkdir som60_6.0.0.132_source
-    cd som60_6.0.0.132_source
-    repo init -u git@github.com:LairdCP/SOM60-Release-Packages.git -m som60_6.0.0.132.xml
+    mkdir ig60_6.0.0.132_source
+    cd ig60_6.0.0.132_source
+    repo init -u git@github.com:LairdCP/IG60-Laird-Linux-Release-Packages.git -m ig60_6.0.0.132.xml
     repo sync
 
 _Note: Repo will initialize a .repo directory and then place all files directly in the directory that you are in when you run the `repo` command. So we recommend making a subdirectory and working in there._
@@ -307,18 +298,18 @@ Then add it to your build environment:
 Once your repo sync is finished, you are ready to build your own SD card image. This can be achieved by the following:
 
     cd wb
-    make som60sd
+    make ig60sd
 
 Once your build completes, you will find the output similar to below:
 ```
-~/git/lrd-7.0.0.x/wb$ cd buildroot/output/som60sd/images/
-~/git/lrd-7.0.0.x/wb/buildroot/output/som60sd/images$ ls -al
-som60sd-target-sbom-20190222
-som60sd-host-sbom-20190222
+~/git/lrd-7.0.0.x/wb$ cd buildroot/output/ig60sd/images/
+~/git/lrd-7.0.0.x/wb/buildroot/output/ig60sd/images$ ls -al
+ig60sd-target-sbom-20190222
+ig60sd-host-sbom-20190222
 u-boot-spl.bin
 u-boot.itb
 rootfs.tar
-som60sd-sdk.tar.bz2
+ig60sd-sdk.tar.bz2
 legal-info-20190222.tar.bz2
 kernel.itb
 mksdcard.sh
@@ -330,7 +321,7 @@ You can see that the SD card image and the mksdcard.sh script are included.
 ### Create a custom SDK
 If you'd like to create a custom SDK from your customized source build, while in the target's output directory, issue a `make sdk`:
 ```
-~/git/lrd-7.0.0.x/wb/buildroot/output/som60sd$ make sdk
+~/git/lrd-7.0.0.x/wb/buildroot/output/ig60sd$ make sdk
 ```
 
 ## NetworkManager
