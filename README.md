@@ -79,11 +79,11 @@ If you power cycle the IG60, you should see a boot-up sequence similar to below.
 ```
 RomBOOT
 
-U-Boot SPL 2018.01-som60sd (Jan 31 2019 - 12:56:52)
+U-Boot SPL 2018.01-ig60sd (Jan 31 2019 - 12:56:52)
 Trying to boot from MMC0
 reading u-boot.itb
 
-U-Boot 2018.01-som60sd (Jan 31 2019 - 12:56:52 -0500)
+U-Boot 2018.01-ig60sd (Jan 31 2019 - 12:56:52 -0500)
 
 CPU: SAMA5D36
 Crystal frequency:       12 MHz
