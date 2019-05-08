@@ -5,10 +5,79 @@ IG60 Development Kit and Source Releases.  For source release instructions and a
 
 # Introduction
 ## Purpose
-The reference guide is intended to provide an embedded developer with the information needed to start evaluating and integrating the IG60 Laird Linux gateway for their connectivity and embedded Linux processing needs.  The guide is designed to walk the developer integrating the IG60 Laird Linux gateway through the same process Laird developers use to develop our own boxed products. This allows multiple levels of Laird's customer support team to assist with customer integrations.
+The reference guide is intended to provide an embedded developer with the information needed to start evaluating and integrating the IG60 Laird Linux gateway for their IoT connectivity and processing needs.  The guide is designed to walk the developer integrating the IG60 Laird Linux gateway through the same process Laird developers use to develop our own boxed products. This allows multiple levels of Laird's customer support team to assist with customer integrations.
 ## Product Overview
-Laird’s IG60 Laird Linux gateway, based on the Microchip SAMA5D36 processor, brings all of Laird’s industry competence and capabilities into one solution. The gateway provides superior enterprise-class Wi-Fi connectivity with full support for 2x2 MU-MIMO 802.11ac WLAN, plus Bluetooth 4.2 dual-mode. This solution is equipped with a power efficient Cortex A5 applications processor, wireless and wired connectivity, enterprise-grade security, LCD support, and comprehensive Linux board support package (BSP). The IG60 Laird Linux gateway is the ideal system on module for devices that require superior connectivity. Complete with the Sterling 60 series module and Summit Software Stack, the SOM provides superior wireless connectivity in harsh RF environments. For wired connectivity, it supports dual-Ethernet and CAN bus. The 30mm x 30mm form factor and variety of interfaces allow the IG60 Laird Linux gateway to be used as a wireless bridge, main processing unit, or IoT gateway.
+The Sentrius™ IG60 using Laird Linux has a small footprint for easy installation and a rugged, industry spec design that enables it to withstand wide temperature ranges, humidity, shock, and vibration. Certified for industry environment, the IG60 is ideal for industry deployment.
+
+The IG60 can use several wired and wireless interfaces, collecting data and using customer applications on top of Laird Linux to process and send data to a variety of cloud solutions.
+
+The IG60 comes standard with IEEE 802.11ac 2x2, Bluetooth 4.2, Ethernet, USB, SD and serial interfaces.
+
+Example customer use cases that can be developed using the IG60 running Laird Linux:
+
+* Remotely monitor and control your infrastructure and surveillance equipment on pipelines, meters, pumps and valves in any energy, utility or industrial application.
+* Instantly connect your equipment at remote locations or temporary sites.
+* Providing reliable internet connectivity to remote workers.
+* Connecting your machines to IoT platform (Such as Microsoft Azure, Amazon AWS, and PTC ThingWorx, etc.) for continuous monitoring and visualization.
 # Hardware Information
+Wired Interfaces
+
+Serial Ports
+
+The serial port supports RS232, RS422 and RS485 modes via a D-Sub9 connector.
+
+The IG60 can then take that information and re-encode it in a format such as MQTT, preparing it for an IoT platform like AWS.
+
+Complies with the EIA RS-232, RS-422, and RS-485 specification.
+Supports up to 115.2 kbps baud rate.
+Software selectable RS-232/422/485 communication.
+Output driver levels swing from -7 VDC to +7 VDC with normal loading.
+Input voltage ranges from -25 VDC to +25 VDC.
+The following table provides the pin definition of the D-Sub9 connector for various operation modes.
+The following table summarizes the serial pins in their various specifications and duplex settings.
+Ethernet
+
+There are two ethernet ports on the IG60.
+
+LAN1 for 10/100 Mbit/s
+LAN2 for 10/100/1000 Mbit/s
+For to indication Ethernet status, there are two embedded LEDs are associated with each port. Table 7 provides a description of the two LEDs.
+USB 
+
+The USB-A connector on the IG60 supports connection to USB devices. The USB device port supports the USB 2.0 standard, at high speed, full speed, and low speed data rates.
+
+Antenna Ports
+
+There are two SMA antenna ports on the IG60, for WLAN1 and WLAN2. These two connectors are fitted with the two included dipole antennas
+
+Wireless Interfaces
+
+Wi-Fi
+
+The gateway's 802.11ac Wi-Fi features 2x2 MU-MIMO support, powered by the Marvell 88W8997 chipset. Additional spatial streams provide higher wireless throughput, and a dedicated cryptographic chip provides FIPS 140-2 encryption for sensitive data.
+
+The Wi-Fi connection is supported by both the WLAN1 and WLAN2 antennas.
+
+Bluetooth
+
+With Bluetooth 5, the gateway provides both Classic Bluetooth and Bluetooth Low Energy connection. Bluetooth Low Energy is ideal for collecting intermittent sensor data from a large number of sources, while Classic Bluetooth can accept virtual serial port or other higher bandwidth data streams.
+
+The Bluetooth connection is supported by the WLAN2 antenna.
+Data Storage
+
+Onboard Flash Memory
+
+The IG60 features 512 MB of internal NAND Flash memory available for your applications.
+
+This internal memory is encompassed in the user space provided for the Greengrass core. This storage space is not meant to be directly manipulated by the user, but rather applications are deployed by AWS and executed from this space.
+
+MicroSD Slot
+
+The MicroSD slot (SDHC, SD Card 2.0) provides a large amount of removable storage. This is especially useful for instances where large amounts of data need to be logged or preserved. For example, for instances where wireless signal is temporarily lost, data can be backed up via a micro SD slot and sent to its destination when connection is re-established. The MicroSD slot provides potentially hundreds of gigabytes of data storage for your applications.
+Power Supply
+
+The IG60 supports a voltage range between 9 V and 36V. The following figure shows the power connector on the IG60.The IG60 comes with a 12V/2.5A AC power adapter. An optional DC power cable with three meter length is available for the IG60, as shown below.
+
 ## Using the Debug Console
 Connect the USB-to-Micro USB cable from your computer to the Debug UART (USB1) on the DVK-SU60-SOMC. During development and evaluation, a serial console program is required.  Laird recommends the use of minicom on Linux or PuTTY on Windows. If using the recommended Ubuntu operating system for evaluation or development, you can install minicom as follows:
 
