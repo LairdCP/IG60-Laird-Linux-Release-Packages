@@ -40,7 +40,7 @@ The serial port supports RS232, RS422 and RS485 modes via a D-Sub9 connector. Th
 
 The following table summarizes the serial pins in their various specifications and duplex settings.
 ![Serial Port](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_serial_port.png?raw=true)
-![Serial Pin Out](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_power_port_pin_out.png?raw=true)
+![Serial Pin Out](https://github.com/LairdCP/content_imgs/blob/master/ig60/ig60_serial_port_pin_out.png?raw=true)
 ### Ethernet
 There are two ethernet ports on the IG60.
 * LAN1 for 10/100 Mbit/s
