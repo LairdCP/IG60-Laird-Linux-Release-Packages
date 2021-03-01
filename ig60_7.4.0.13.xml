@@ -23,6 +23,9 @@
   <project path="buildroot/package/lrd/externals/weblcm-python"
            name="weblcm-python.git" />
 
+  <project path="buildroot/package/lrd/externals/lrd-userspace-examples"
+           name="lrd-userspace-examples.git" />
+
   <project path="buildroot/package/lrd/externals/igconfd"
            name="igconfd.git" />
 
