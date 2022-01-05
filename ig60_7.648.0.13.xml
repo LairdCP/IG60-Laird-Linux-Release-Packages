@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="origin" fetch="ssh://git@github.com/LairdCP" />
+
+  <default remote="origin" revision="refs/tags/LRD-REL-7.648.0.13" />
+
+  <project path="som-external"
+           name="som-external.git" />
+
+  <project path="buildroot"
+           name="wb-buildroot.git" />
+
+  <project path="buildroot/package/lrd/externals/kernel"
+           name="wb-kernel.git" />
+
+  <project path="buildroot/package/lrd/externals/kernel/drivers/net/wireless/laird/lrdmwl"
+           name="lrdmwl.git" />
+
+  <project path="buildroot/package/lrd/externals/u-boot-som60"
+           name="u-boot-som.git" />
+
+  <project path="buildroot/package/lrd/externals/weblcm-python"
+           name="weblcm-python.git" />
+
+  <project path="buildroot/package/lrd/externals/igsdk"
+	   name="igsdk.git" revision="refs/tags/v5.0.0" />
+
+  <project path="buildroot/package/lrd/externals/lrd-userspace-examples"
+           name="lrd-userspace-examples.git" />
+
+  <project path="buildroot/package/lrd/externals/igconfd"
+           name="igconfd.git" />
+
+  <project path="buildroot/package/lrd/externals/igupd"
+           name="igupd.git" />
+
+  <project path="buildroot/package/lrd/externals/lrd-bt-utils"
+           name="lrd_bt_utils.git" />
+
+</manifest>
