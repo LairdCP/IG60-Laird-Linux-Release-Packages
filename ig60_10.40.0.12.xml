@@ -14,9 +14,6 @@
   <project path="buildroot/package/lrd/externals/kernel"
            name="wb-kernel.git" />
 
-  <project path="buildroot/package/lrd/externals/kernel/drivers/net/wireless/laird/lrdmwl"
-           name="lrdmwl.git" />
-
   <project path="buildroot/package/lrd/externals/u-boot-som60"
            name="u-boot-som.git" />
 
