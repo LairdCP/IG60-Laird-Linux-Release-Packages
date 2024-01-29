@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="origin" fetch="ssh://git@github.com/LairdCP" />
+
+  <default remote="origin" revision="refs/tags/LRD-REL-11.92.0.23" />
+
+  <project path="som-external"
+           name="som-external.git" />
+
+  <project path="buildroot"
+           name="wb-buildroot.git" />
+
+  <project path="som-external/package/lrd/externals/kernel"
+           name="wb-kernel.git" />
+
+  <project path="som-external/package/lrd/externals/u-boot-som60"
+           name="u-boot-som.git" />
+
+  <project path="som-external/package/lrd/externals/summit-rcm"
+           name="summit-rcm.git" />
+
+  <project path="som-external/package/lrd/externals/lrd-userspace-examples"
+           name="lrd-userspace-examples.git" />
+
+  <project path="som-external/package/lrd/externals/igconfd"
+           name="igconfd.git" />
+
+  <project path="som-external/package/lrd/externals/igprovd"
+           name="igprovd.git" />
+
+  <project path="som-external/package/lrd/externals/lrd-bt-utils"
+           name="lrd_bt_utils.git" />
+
+</manifest>
