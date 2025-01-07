@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="origin" fetch="https://github.com/LairdCP" />
+
+  <default remote="origin" revision="refs/tags/LRD-REL-12.87.0.32" />
+
+  <project path="som-external"
+           name="som-external.git" />
+
+  <project path="buildroot"
+           name="wb-buildroot.git" />
+
+  <project path="som-external/externals/kernel"
+           name="wb-kernel.git" />
+
+  <project path="som-external/externals/u-boot-som60"
+           name="u-boot-som.git" />
+
+  <project path="som-external/externals/summit-rcm"
+           name="summit-rcm.git" />
+
+  <project path="som-external/externals/lrd-userspace-examples"
+           name="lrd-userspace-examples.git" />
+
+  <project path="som-external/externals/igconfd"
+           name="igconfd.git" />
+
+  <project path="som-external/externals/igprovd"
+           name="igprovd.git" />
+
+  <project path="som-external/externals/lrd-bt-utils"
+           name="lrd_bt_utils.git" />
+
+  <project path="summit-radio-external"
+           name="summit-radio-external.git"
+           revision="lrd-12.29.0.x" />
+
+</manifest>
