@@ -3,7 +3,7 @@ IG60 Development Kit and Source Releases.
 
 For overall product information, please see the product page on our main website:
 
-<https://www.lairdconnect.com/iot-platforms/wireless-gateways/sentrius-ig60-wireless-iot-gateway>
+<https://www.ezurio.com/iot-devices/bluetooth-iot-devices/sentrius-ig60-bl654-and-ig60-bl654-lte-wireless-iot-gateway>
 
 For documentation, please see the online documentation:
 
@@ -13,4 +13,4 @@ For documentation, please see the online documentation:
 
 For releases of the binary development kit image and prebuilt SDK, see the releases page linked below:
 
-<https://github.com/LairdCP/IG60-Laird-Linux-Release-Packages/releases>
+<https://github.com/Ezurio/IG60-Summit-Linux-Release-Packages/releases>
