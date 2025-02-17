@@ -1,4 +1,4 @@
-# IG60-Laird-Linux-Release-Packages
+# IG60-Summit-Linux-Release-Packages
 IG60 Development Kit and Source Releases.  
 
 For overall product information, please see the product page on our main website:
